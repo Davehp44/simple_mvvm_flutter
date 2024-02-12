@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:mvvm_flutter/features/detail_user/controller/user_controller.dart';
+import 'package:mvvm_flutter/features/detail_user/viewmodel/user_view_model.dart';
 
 class GlobalBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put(UserController(), permanent: true);
+    Get.put(UserViewModel(), permanent: true);
   }
 }

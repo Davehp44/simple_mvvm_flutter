@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:mvvm_flutter/features/detail_user/controller/user_controller.dart';
+import 'package:mvvm_flutter/features/detail_user/viewmodel/user_view_model.dart';
 
 class PersonListView extends StatelessWidget {
   const PersonListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<UserController>(
+    return GetBuilder<UserViewModel>(
       builder: (controller) => Scaffold(
-        appBar: AppBar(title: Text('Person List')),
+        appBar: AppBar(title: const Text('Person List')),
         body: ListView.builder(
           itemCount: controller.persons.length,
           itemBuilder: (context, index) {
@@ -18,7 +18,7 @@ class PersonListView extends StatelessWidget {
               title: Text(person.name),
               subtitle: Text('Age: ${person.age}'),
               trailing: IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () => controller.removePerson(person),
               ),
               onTap: () => controller.showEditDialog(context, person),
@@ -26,7 +26,7 @@ class PersonListView extends StatelessWidget {
           },
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () => controller.showAddDialog(context),
         ),
       ),

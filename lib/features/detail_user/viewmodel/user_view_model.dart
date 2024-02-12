@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_flutter/core/model/user_model.dart';
 
-class UserController extends GetxController{
+class UserViewModel extends GetxController{
 
   final List<User> _persons = [];
 
